@@ -10,7 +10,7 @@ module main ();
     reg CLK;
     initial begin
         CLK = 1'b1;
-        repeat (416) begin
+        repeat (32) begin
             #100 CLK = ~CLK;
         end
     end
