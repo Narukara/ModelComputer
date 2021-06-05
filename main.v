@@ -3,6 +3,7 @@
 `include "decoder.v"
 `include "reg_file.v"
 `include "ROM.v"
+`include "RAM.v"
 `timescale 1ps/1ps
 module main ();
     
@@ -46,11 +47,14 @@ module main ();
     wire [7:0] R;
     ALU alu((A_MUX)? bias_ex : D1, D2, ALU_OP, R);
 
+    wire [7:0] RAM_D;
+    RAM ram(CLK, RAM_WE, D1, R, RAM_D);
+
     assign WD =
     (REG_MUX == 2'b11)? R :
     (REG_MUX == 2'b01)? code[7:0] :
     (REG_MUX == 2'b10)? PC_1 :
-    8'b0;  // RAM_D
+    RAM_D;
 
     genvar i;
     generate
