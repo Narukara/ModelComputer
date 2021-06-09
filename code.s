@@ -1,12 +1,28 @@
-loadi $a0 3
-loadi $a1 2
-jal $ra 11
-add $t0 $v $0
-store 2 $t0 $0
-load $t1 0 $a1
-eq $t2 $t0 $t1
-jifn 8 $t2
-sft $t0 $t0 $a1
-jal $0 10
-add $v $a0 $a1
+loadi $sp 255
+loadi $a0 10
+jal $ra 5
+jal $0 4
+loadi $t0 3
+lt $t1 $a0 $t0
+jifn 10 $t1
+loadi $v 1
+jr $ra
+sub $sp $sp $t0
+store 3 $ra $sp
+store 2 $s0 $sp
+store 1 $s1 $sp
+add $s0 $a0 $0
+loadi $t2 1
+sub $a0 $s0 $t2
+jal $ra 5
+add $s1 $v $0
+loadi $t0 2
+sub $a0 $s0 $t0
+jal $ra 5
+add $v $v $s1
+load $ra 3 $sp
+load $s0 2 $sp
+load $s1 1 $sp
+loadi $t0 3
+add $sp $sp $t0
 jr $ra
