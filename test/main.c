@@ -1,3 +1,5 @@
+// example program: Fibonacci sequence
+
 int fibbo(int i) {
     if (i < 3) {
         return 1;
@@ -7,6 +9,6 @@ int fibbo(int i) {
 }
 
 int main(){
-    fibbo(10);
+    fibbo(10); // = 55
     while(1);
 }

@@ -1,9 +1,9 @@
 `timescale 1ps/1ps
 module RAM (input CLK,
-            input WE,
-            input [7:0] WD,
-            input [7:0] RA_WA,
-            output [7:0] D);
+            input WE,           // write enable
+            input [7:0] WD,     // data to be write
+            input [7:0] RA_WA,  // read/write address
+            output [7:0] D);    // data(read)
     
     reg [7:0] ram [255:0];
     

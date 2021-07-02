@@ -5,11 +5,7 @@
             "label": "build",
             "command": "iverilog main.v && ./a.out && rm a.out",
             "type": "shell",
-            "args": [],
             "problemMatcher": [],
-            "presentation": {
-                "reveal": "always"
-            },
             "group": {
                 "kind": "build",
                 "isDefault": true
@@ -17,8 +13,11 @@
         },
         {
             "label": "assemble",
+            "options": {
+                "cwd": "./test"
+            },
             "type": "shell",
-            "command": "python assembler.py code.s",
+            "command": "python3 assembler.py code.s",
             "problemMatcher": [],
             "group": {
                 "kind": "test",

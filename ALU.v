@@ -3,19 +3,20 @@
 `include "adder.v"
 `timescale 1ps/1ps
 /**
+/* Operation code
 /* add 000
 /* sub 100
 /* and 001
 /* nor 010
-/* s   011
+/* sft 011
 /* gt  101
 /* lt  110
 /* eq  111
  **/
 module ALU (input [7:0] A,
             input [7:0] B,
-            input [2:0] op,
-            output [7:0] R);
+            input [2:0] op,  // operation code
+            output [7:0] R); // result
     
     wire [7:0] notB = ~B;
     wire [7:0] B_or_notB = (op[2] == 0)? B : notB;

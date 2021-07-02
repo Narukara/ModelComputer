@@ -33,7 +33,7 @@ def num_to_bin(s: str, fill: int, ifj = False) -> str:
 
 
 lines = open(sys.argv[1], 'r').read().splitlines()
-out = open("exe", 'w')
+out = open("code.exe", 'w')
 
 k = 0
 for l in lines:
